@@ -52,7 +52,7 @@ const total = cartTotal + shipping;
           </View>
 
           {/* Checkout button */}
-           <TouchableOpacity className='bg-pink-600 py-4 rounded-full items-center' onPress={()=router.push('/checkout')}>
+           <TouchableOpacity className='bg-pink-600 py-4 rounded-full items-center'  onPress={()=> router.push('/Checkout')}>
             <Text className='text-white font-bold text-base'>Checkout</Text>
            </TouchableOpacity>
         </View>
