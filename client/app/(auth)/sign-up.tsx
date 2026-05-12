@@ -49,7 +49,7 @@ export default function SignUpScreen() {
             Toast.show({
                 type: 'error',
                 text1: 'Failed to Sign Up',
-                text2: err?.error?.[0]?.message ?? "Something went wrong"
+                text2: err?.errors?.[0]?.message ?? "Something went wrong"
             });
         } finally {
             setLoading(false);
@@ -85,7 +85,7 @@ export default function SignUpScreen() {
             Toast.show({
                 type: 'error',
                 text1: 'Failed to Verify',
-                text2: err?.error?.[0]?.message ?? "Invalid code"
+                text2: err?.errors?.[0]?.message ?? "Invalid code"
             });
         } finally {
             setLoading(false);
@@ -93,7 +93,7 @@ export default function SignUpScreen() {
     };
 
     return (
-        <SafeAreaView className="flex-1 bg-white justify-center" style={{ padding: 28 }}>
+        <SafeAreaView className="flex-1 bg-pink-400 justify-center" style={{ padding: 28 }}>
             {!pendingVerification ? (
                 <>
                     <TouchableOpacity onPress={() => router.push("/")} className="absolute top-12 z-10">
@@ -109,29 +109,29 @@ export default function SignUpScreen() {
                     {/* First Name */}
                     <View className="mb-4">
                         <Text className="text-primary font-medium mb-2">First Name</Text>
-                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="John" placeholderTextColor="#999" value={firstName} onChangeText={setFirstName} />
+                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="John" placeholderTextColor="#FFFF" value={firstName} onChangeText={setFirstName} />
                     </View>
 
                     {/* Last Name */}
                     <View className="mb-6">
                         <Text className="text-primary font-medium mb-2">Last Name</Text>
-                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="Doe" placeholderTextColor="#999" value={lastName} onChangeText={setLastName} />
+                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="Doe" placeholderTextColor="#FFFF" value={lastName} onChangeText={setLastName} />
                     </View>
 
                     {/* Email */}
                     <View className="mb-4">
                         <Text className="text-primary font-medium mb-2">Email</Text>
-                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="user@example.com" placeholderTextColor="#999" autoCapitalize="none" keyboardType="email-address" value={emailAddress} onChangeText={setEmailAddress} />
+                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="user@example.com" placeholderTextColor="#FFFF" autoCapitalize="none" keyboardType="email-address" value={emailAddress} onChangeText={setEmailAddress} />
                     </View>
 
                     {/* Password */}
                     <View className="mb-6">
                         <Text className="text-primary font-medium mb-2">Password</Text>
-                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="********" placeholderTextColor="#999" secureTextEntry value={password} onChangeText={setPassword} />
+                        <TextInput className="w-full bg-surface p-4 rounded-xl text-primary" placeholder="********" placeholderTextColor="#FFFF" secureTextEntry value={password} onChangeText={setPassword} />
                     </View>
 
                     {/* Submit */}
-                    <TouchableOpacity className="w-full bg-primary py-4 rounded-full items-center mb-10" onPress={onSignUpPress} disabled={loading}>
+                    <TouchableOpacity className="w-full bg-Primary py-4 rounded-full items-center mb-10" onPress={onSignUpPress} disabled={loading}>
                         {loading ? <ActivityIndicator color="#fff" /> : <Text className="text-white font-bold text-lg">Continue</Text>}
                     </TouchableOpacity>
 
