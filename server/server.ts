@@ -14,7 +14,7 @@ const startServer = async () => {
 
     app.post('/api/clerk', express.raw({type: "application/json"}), clerkWebhook)
 
-    /// Middleware
+    // Middleware
     app.use(cors());
     app.use(express.json());
     app.use(clerkMiddleware());
