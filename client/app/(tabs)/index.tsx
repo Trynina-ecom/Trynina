@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
    <SafeAreaView className='flex-1' edges= {['top']}>
-    <Header title='Trynina📸' showMenu showCart />
+    <Header title='Velyra📸' showMenu showCart />
 
     <ScrollView className='flex-1 px-4' showsVerticalScrollIndicator={false}>
      {/* Banner Slider */}
