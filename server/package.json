@@ -8,7 +8,7 @@
     "server": "nodemon --exec tsx server.ts",
     "build": "tsc"
   },
-  "type ": "module",
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
