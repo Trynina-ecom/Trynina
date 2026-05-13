@@ -18,8 +18,7 @@ export const clerkWebhook = async (req: Request, res: Response) => {
       "svix-signature": req.headers["svix-signature"] as string,
     };
 
-    const payload = JSON.stringify(req.body);
-
+    const payload = req.body.toString();
     const evt: any = webhook.verify(payload, headers);
 
     if (
