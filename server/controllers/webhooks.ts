@@ -40,8 +40,13 @@ export const clerkWebhook = async (req: Request, res: Response) => {
       } else if (user) {
         await User.findOneAndUpdate({ clerkId: evt.data.id }, userData);
       } else {
-        await User.create(userData);
-      }
+      try {
+     const newUser = await User.create(userData);
+      console.log("✅ USER CREATED:", newUser);
+      }catch (dbErr) {
+      console.error("❌ MONGO CREATE ERROR:", dbErr);
+     }
+}
     }
 
     return res.json({ success: true, message: "Webhook received" });
